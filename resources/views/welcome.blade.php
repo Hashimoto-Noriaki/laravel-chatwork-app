@@ -7,4 +7,5 @@
     </div>
 </div>
 <h5 class="description text-center">"○○"について140字以内で会話をしよう</h5>
+<h5 class="description text-center">テスト</h5>
 @endsection
