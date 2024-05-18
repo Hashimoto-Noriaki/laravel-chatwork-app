@@ -1,19 +1,23 @@
-# docker構築
+### その他詳細はWikiに記載
+
+https://github.com/Hashimoto-Noriaki/laravel-chatwork-app/wiki
+
+### docker構築
 ```
 docker compose build
  ```
 
- # docker起動
+ ### docker起動
  ```
 docker compose up -d
  ```
 
- # ブラウザ起動確認
+ ### ブラウザ起動確認
  ```
  http://localhost:8080/
  ```
 
- # コンテナ起動
+ ### コンテナ起動
  ```
  docker exec -it laravel_app bash
 
