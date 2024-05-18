@@ -33,6 +33,4 @@
         </div>
     </div>
 </div>
-<h5 class="description text-center mt-3">チャットで会話をしましょう</h5>
-
 @endsection
