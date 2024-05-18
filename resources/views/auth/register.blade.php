@@ -1,13 +1,13 @@
 @extends('layouts.app')
 @section('content')
 
-<div class="text-center">
-    <div class="text-center mt-3">
+<div class="text-center mt-5">
+    <div class="text-center">
         <h1><i class="fas fa-chalkboard-teacher pr-3 d-inline"></i>Chat App</h1>
-        <div class="text-center">
-            <h3 class="login_title text-left d-inline-block mt-5">新規登録</h3>
+        <div class="text-center mt-10">
+            <h3 class="login_title text-left d-inline-block mt-10">新規登録</h3>
         </div>
-        <div class="row mt-5 mb-5">
+        <div class="row mt-50 mb-5">
             <div class="col-sm-6 offset-sm-3">
                 <form method="POST" action="{{ route('signup.post') }}">
                     @csrf
@@ -27,7 +27,7 @@
                         <label for="password_confirmation">パスワード確認</label>
                         <input id="password_confirmation" type="password" class="form-control" name="password_confirmation" value="{{ old('password_confirmation') }}">
                     </div>
-                    <button type="submit" class="btn btn-block btn-primary mt-3 mb-3">新規登録</button>
+                    <button type="submit" class="btn btn-block btn-primary mt-3">新規登録</button>
                 </form>
             </div>
         </div>
