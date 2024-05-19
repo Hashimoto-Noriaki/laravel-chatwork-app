@@ -1,7 +1,7 @@
 <header class="mb-5">
     <div class="container-fluid px-0">
         <nav class="navbar navbar-expand-sm navbar-dark bg-danger">
-            <a class="navbar-brand" href="/">Chat Work</a>
+            <a class="navbar-brand" href="/">Chat App</a>
             <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#nav-bar">
                 <span class="navbar-toggler-icon"></span>
             </button>
