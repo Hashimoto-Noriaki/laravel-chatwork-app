@@ -26,6 +26,11 @@ Route::post('login','Auth\LoginController@login')->name('login.post');
 //ログアウと機能
 Route::get('logout','Auth\LoginController@logout')->name('logout');
 
+//ユーザー
+Route::get('/','UsersController@index');
+Route::prefix('users')->group(function (){
+    Route::get('{id}','UsersController@show')->name('user.show');
+});
 
 
 
