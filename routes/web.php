@@ -27,5 +27,7 @@ Route::get('logout','Auth\LoginController@logout')->name('logout');
 
 //ユーザー
 Route::prefix('users')->group(function (){
-    Route::get('{id}','UsersController@show')->name('user.show');
+    Route::get('{id}','UsersController@show')->name('users.show');
+    Route::get('{id}/edit','UsersController@edit')->name('users.edit');
+    Route::put('{id}','UsersController@update')->name('users.update');
 });
