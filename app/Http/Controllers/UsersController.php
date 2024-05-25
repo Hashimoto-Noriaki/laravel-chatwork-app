@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Http\Requests\UserRequest;
 use App\User;
 use App\Posts;
 
@@ -32,7 +33,7 @@ class UsersController extends Controller
 
     public function update(UserRequest $request,$id)
     {
-        $user = User::findOeFail($id);
+        $user = User::findOrFail($id);
         $user->name = $request->name;
         $user->email = $request->email;
         $user->password = bcrypt($request->password);
