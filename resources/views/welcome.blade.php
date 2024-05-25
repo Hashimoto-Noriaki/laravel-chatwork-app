@@ -7,4 +7,5 @@
     </div>
 </div>
 <h5 class="description text-center">チャットで会話をしましょう</h5>
+@include('post.post',['posts' => $posts])
 @endsection
