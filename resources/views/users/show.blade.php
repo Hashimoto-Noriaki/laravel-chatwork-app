@@ -1,14 +1,13 @@
 @extends('layouts.app')
 @section('content')
-
-<div class="row">
+<div style="margin-top: -80px;">
     <aside class="col-sm-4 mb-5">
         <div class="card bg-info">
             <div class="card-header">
                 <h3 class="card-title text-light">{{$user->name}}</h3>
             </div>
             <div class="card-body">
-                <img class="rounded-circle img-fluid" src="{{ Gravatar::src($user->email, 400) }}" alt="">
+                <img class="rounded-circle img-fluid" src="{{ Gravatar::src($user->email, 400) }}" alt=""　style="max-height: -50px;">
                 @if (Auth::check() && Auth::user()->id == $user->id)
                     <div class="mt-3">
                         <a href="{{ route('users.edit',['id' => $user->id])}}" class="btn btn-primary btn-block">ユーザ情報の編集</a>
@@ -26,4 +25,5 @@
       @include('post.post',['posts' => $posts])
     </div>
  </div>
+</div>
  @endsection

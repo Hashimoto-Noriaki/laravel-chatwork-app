@@ -1,14 +1,12 @@
 @extends('layouts.app')
 @section('content')
-    <h2 class="mt-5 mb-3">ユーザ情報を編集する</h2>
-
-
-<form method="POST" action="{{ route('users.update', $user->id) }}">
-    @csrf
-    @method('PUT')
-    @include('commons.error_messages')
+    <h2 class="mt-10 mb-3">ユーザ情報を編集する</h2>
+    <form method="POST" action="{{ route('users.update', $user->id) }}">
+        @csrf
+        @method('PUT')
+        @include('commons.error_messages')
         <div class="form-group">
-            <label for="name">ユーザー名</label for-"name">
+            <label for="name">ユーザー名</label>
             <input id="name" type="text" class="form-control" name="name" value="{{ old('name', $user->name) }}">
         </div>
         <div class="form-group">
@@ -24,8 +22,8 @@
             <input id="password_confirmation" type="password" class="form-control" name="password_confirmation" value="{{ old('password_confirmation') }}">
         </div>
         <div class="d-flex justify-content-between">
-            <button type="submit" class="mt-3 btn btn-danger ">退会する</button>
-            <button type="submit"class="mt-3 btn btn-primary">更新する</a></button>
+            <button type="submit" class="mt-3 btn btn-danger">退会する</button>
+            <button type="submit" class="mt-3 btn btn-success">更新する</button>
         </div>
     </form>
 @endsection
