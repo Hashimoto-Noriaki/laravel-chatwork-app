@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('content')
-<div style="margin-top: -80px;">
+<div style="margin-top: 30px;">
     <aside class="col-sm-4 mb-5">
         <div class="card bg-info">
             <div class="card-header">
