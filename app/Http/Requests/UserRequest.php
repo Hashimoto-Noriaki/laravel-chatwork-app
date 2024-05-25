@@ -25,9 +25,8 @@ class UserRequest extends FormRequest
     {
         return [
             'name' => ['required','string','max:255'],
-            'email' => ['required','string','email','max:255',
-            //emailが他人と重複していても登録できないようにするため
-            Rule::unique('users')->ignore($this->id)],
+            //Rule::unique('users')->ignore($this->id)はemailが他人と重複していても登録できないようにするため
+            'email' => ['required','string','email','max:255',Rule::unique('users')->ignore($this->id)],
             'password' => ['required', 'string', 'min:8', 'confirmed']
         ];
     }
