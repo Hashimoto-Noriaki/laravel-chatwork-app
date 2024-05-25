@@ -10,4 +10,16 @@ class UsersController extends Controller
     {
         $user = User::findOrFail($id);
     }
+
+    public function edit($id)
+    {
+
+    }
+
+    public function update($id)
+    {
+
+    }
+
+
 }
