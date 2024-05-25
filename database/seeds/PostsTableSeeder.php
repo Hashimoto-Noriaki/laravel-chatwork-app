@@ -11,7 +11,7 @@ class PostsTableSeeder extends Seeder
      */
     public function run()
     {
-        for($val = 0;$val <= 80; $val++){
+        for($val = 0;$val <= 5; $val++){
             DB:table('posts')->insert([
                 'text'=> 'test'.$val,
                 'user_id' => $val,
