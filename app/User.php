@@ -52,7 +52,7 @@ class User extends Authenticatable
         parent::boot();
 
         static::deleting(function ($user) {
-            $user->post()->delete();
+            $user->posts()->delete();
         });
     }
 }
