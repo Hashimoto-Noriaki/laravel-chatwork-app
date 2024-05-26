@@ -41,4 +41,13 @@ class UsersController extends Controller
         //後ほどかの箇所は修正(ユーザー詳細画面に遷移するように修正)
         return back();
     }
+
+    public function destroy($id)
+    {
+        $user = User::findOrFail($id);
+        if (\Auth::id() === $user->id){
+            $user->delete();
+        }
+        return redirect('/');
+    }
 }
