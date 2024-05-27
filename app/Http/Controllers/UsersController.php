@@ -38,8 +38,7 @@ class UsersController extends Controller
         $user->email = $request->email;
         $user->password = bcrypt($request->password);
         $user->save();
-        //後ほどかの箇所は修正(ユーザー詳細画面に遷移するように修正)
-        return back();
+        return redirect()->route('users.show', ['id' => $id]);
     }
 
     public function destroy($id)
