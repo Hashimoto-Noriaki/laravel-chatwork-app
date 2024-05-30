@@ -11,12 +11,13 @@ class UsersTableSeeder extends Seeder
      */
     public function run()
     {
-        for($val = 1;$val<=6;$val++){
+        for($val = 1;$val<=15;$val++){
             DB::table('users')->insert([
                 'name'=> 'test'.$val,
-                'email' => 'test'.$val.'@example.com',
+                'email' => 'test'.$val.'@test.com',
                 'password'=> bcrypt('test'.$val),
-                'created_at' => now()
+                'created_at' => now(),
+                'updated_at' => now(),
             ]);
         }
     }
