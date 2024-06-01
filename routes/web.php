@@ -32,3 +32,15 @@ Route::prefix('users')->group(function (){
     Route::put('{id}','UsersController@update')->name('users.update');
     Route::delete('{id}','UsersController@destroy')->name('users.delete');
 });
+
+//ログイン後
+Route::group(['middleware' => 'auth'],function(){
+    //投稿
+    Route::prefix('posts')->group(function(){
+        Route::get('create','PostsController@create')->name('posts.create');
+        Route::post('', 'PostsController@store')->name('posts.store');
+        Route::delete('{id}', 'PostsController@destroy')->name('posts.delete');
+        Route::edit('{id}', 'PostsController@edit')->name('posts.edit');
+        Route::put('{id}', 'PostsController@update')->name('posts.update');
+    });
+});
