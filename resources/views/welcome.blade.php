@@ -13,7 +13,7 @@
         <form method="post" action="{{ route('posts.store') }}" class="d-inline-block w-75">
         @csrf
             <div class="form-group">
-                <textarea class="form-control" name="contents" rows="4">{{ old('contents') }}</textarea>
+                <textarea class="form-control" name="contents" rows="2">{{ old('contents') }}</textarea>
                 <div class="text-left mt-3">
                     <button type="submit" class="btn btn-success">投稿する</button>
                 </div>
