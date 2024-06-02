@@ -39,4 +39,13 @@ class PostsController extends Controller
         }
         abort(404);
     }
+
+    public function  update(PostRequest $request,$id)
+    {
+        $post = Post::findOrFail($id);
+        $post->text = $request->contents;
+        $post->user_id = $request->user()->id;
+        $post->save();
+        return back();
+    }
 }
