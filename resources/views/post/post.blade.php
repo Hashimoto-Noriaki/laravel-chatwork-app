@@ -13,6 +13,11 @@
                 @if (Auth::id() === $post->user_id)
                     <div class="d-flex justify-content-between w-75 pb-3 m-auto">
                         <a href="{{ route('post.edit', $post->id)}}" class="btn btn-success">編集する</a>
+                    <form method="POST" action="{{ route('post.delete', $post->id) }}">
+                        @csrf
+                        @method('DELETE')
+                        <button type="submit" class="btn btn-danger">削除する</button>
+                    </form>
                     </div>
                 @endif
             </div>
