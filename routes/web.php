@@ -16,7 +16,7 @@ Route::get('signup','Auth\RegisterController@showRegistrationForm')->name('signu
 Route::post('signup','Auth\RegisterController@register')->name('signup.post');
 
 //トップページの投稿表示
-Route::get('/', 'PostsController@index');
+Route::get('/', 'PostController@index');
 
 //ログイン機能
 Route::get('login','Auth\LoginController@showLoginForm')->name('login');
@@ -36,10 +36,10 @@ Route::prefix('users')->group(function (){
 // ログイン後
 Route::group(['middleware' => 'auth'], function(){
     //投稿
-    Route::prefix('posts')->group(function (){
-        Route::post('','PostsController@store')->name('posts.store');
-        Route::get('{id}/edit', 'PostsController@edit')->name('posts.edit');
-        Route::put('{id}', 'PostsController@update')->name('posts.update');
-        Route::delete('{id}','PostsController@destroy')->name('posts.delete');
+    Route::prefix('post')->group(function (){
+        Route::post('','PostController@store')->name('post.store');
+        Route::get('{id}/edit', 'PostController@edit')->name('post.edit');
+        Route::put('{id}', 'PostController@update')->name('post.update');
+        Route::delete('{id}','PostController@destroy')->name('post.delete');
     });
 });

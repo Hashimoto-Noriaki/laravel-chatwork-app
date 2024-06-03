@@ -4,13 +4,13 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Http\Requests\PostRequest;
-use App\Posts;
+use App\Post;
 
-class PostsController extends Controller
+class PostController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-        $posts = Posts::orderBy('id','Desc')->paginate(10);
+        $posts = Post::orderBy('id','Desc')->paginate(10);
         return view('welcome',[
             'posts' => $posts,
         ]);
@@ -18,7 +18,7 @@ class PostsController extends Controller
 
     public function store(PostRequest $request)
     {
-        $post = new Posts;
+        $post = new Post;
         $post->text = $request->contents;
         $post->user_id = $request->user()->id;
         $post->save();
@@ -35,17 +35,17 @@ class PostsController extends Controller
                 'user' => $user,
                 'post' => $post,
             ];
-            return view('posts.edit', $data);
+            return view('post.edit', $data);
         }
         abort(404);
     }
 
-    public function  update(PostRequest $request,$id)
+    public function update(PostRequest $request, $id)
     {
         $post = Post::findOrFail($id);
         $post->text = $request->contents;
         $post->user_id = $request->user()->id;
         $post->save();
-        return back();
+        return redirect ('');
     }
 }
