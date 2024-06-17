@@ -1,3 +1,5 @@
+### フロントエンドはVue.jsまたはNuxt.jsにリプレース予定
+
 ### その他詳細はWikiに記載
 
 https://github.com/Hashimoto-Noriaki/laravel-chatwork-app/wiki
